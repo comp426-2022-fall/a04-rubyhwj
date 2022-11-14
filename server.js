@@ -27,7 +27,8 @@ app.post("/app/roll", (req, res) => {
   })
 //6
 app.get('/app/roll/:sides', (req, res) => {
-    res.status(200).json((roll(req.params.sides, 2,1)));
+    const sides =  parseInt(req.params.sides);
+    res.send((roll(sides, 2,1)));
   })
 //7
 app.get('/app/roll/:sides/:dice', (req, res) => {
